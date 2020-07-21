@@ -9,7 +9,7 @@ A simple interface configuration script for Kali Linux built around the flexibil
 The following script will automatically apply the configs to your system.
 
 ```
-curl -s https://raw.githubusercontent.com/Perdyx/gemini/master/install.sh > geminstall && \
+curl -s https://raw.githubusercontent.com/Perdyx/gemini/master/gemini.sh > geminstall && \
   chmod 755 geminstall && \
   sudo ./geminstall && \
   rm geminstall
