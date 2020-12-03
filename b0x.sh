@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Author: per
+# Description: Set up a functional Kali machine for webapp pentesting
+
 if [ $EUID -ne 0 ]; then
     echo "Run as root"
     exit 1
@@ -42,4 +45,4 @@ chmod +x torghost/build.sh
 ./torghost/build.sh
 rm -rf torghost
 
-echo -e "\n\n💀💀💀 Done 💀💀💀\nDon't forget your configs!"
+echo -e "\n\n💀💀💀 Done. Don't forget your configs! 💀💀💀"
