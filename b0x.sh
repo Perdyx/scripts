@@ -40,9 +40,14 @@ source ~/.bash_profile
 
 go get -u github.com/tomnomnom/httprobe
 
+apt install -y python3-pip
 git clone https://github.com/SusmithKrishnan/torghost.git
 chmod +x torghost/build.sh
 ./torghost/build.sh
 rm -rf torghost
+
+systemctl enable ssh
+systemctl start ssh
+systemctl status ssh
 
 echo -e "\n\n💀💀💀 Done. Don't forget your configs! 💀💀💀"
