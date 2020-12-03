@@ -7,7 +7,7 @@ echo -e "DISCLAIMER: Due to the nature of some of applications installed with th
 
 if [ $EUID -eq 0 ]; then
     echo "Root detected. Exiting..."
-    exit 1
+    # exit 1
 fi
 
 sudo echo "62 30 78"
