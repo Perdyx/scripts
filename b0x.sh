@@ -18,7 +18,6 @@ echo " |_.__/ \___//_/\_\\"
 echo -e " v1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n\n"
 
 apt update -y
-apt upgrade -y
 
 apt install -y amass \
     burpsuite \
