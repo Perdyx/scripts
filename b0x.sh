@@ -50,4 +50,6 @@ systemctl enable ssh
 systemctl start ssh
 systemctl status ssh
 
+chsh -s $(which bash)
+
 echo -e "\n\n💀💀💀 Done. Don't forget your configs! 💀💀💀"
