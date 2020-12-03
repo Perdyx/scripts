@@ -22,7 +22,7 @@ apt upgrade -y
 
 apt install -y amass \
     burpsuite \
-    metasploit \
+    metasploit-framework \
     nmap \
     tmux \
     vim
