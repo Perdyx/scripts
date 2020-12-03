@@ -29,12 +29,13 @@ apt install -y amass \
 wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 tar -xvf go1.13.4.linux-amd64.tar.gz
 mv go /usr/local
+rm go1.13.4.linux-amd64.tar.gz
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
+echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile
 source ~/.bash_profile
 
 go get -u github.com/tomnomnom/httprobe
@@ -42,7 +43,9 @@ go get -u github.com/tomnomnom/httprobe
 apt install -y python3-pip
 git clone https://github.com/SusmithKrishnan/torghost.git
 chmod +x torghost/build.sh
-./torghost/build.sh
+cd torghost
+./build.sh
+cd
 rm -rf torghost
 
 systemctl enable ssh
