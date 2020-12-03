@@ -3,12 +3,15 @@
 # Author: per
 # Description: Set up a functional Kali machine for webapp pentesting
 
-if [ $EUID -ne 0 ]; then
-    echo "Run as root"
+echo -e "DISCLAIMER: Due to the nature of some of applications installed with this script, running the entire script as root may have unintended consequences. Certain parts of this script do require root, however, so you will be prompted for your password.\n"
+
+if [ $EUID -eq 0 ]; then
+    echo "Root detected. Exiting..."
     exit 1
 fi
 
-echo "62 30 78"
+sudo echo "62 30 78"
+
 echo "  _      ___       "
 echo " | |    / _ \      "
 echo " | |__ | | | |_  __"
@@ -17,9 +20,9 @@ echo " | |_) | |_| |>  < "
 echo " |_.__/ \___//_/\_\\"
 echo -e " v1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n\n"
 
-apt update -y
+sudo apt update -y
 
-apt install -y amass \
+sudo apt install -y amass \
     burpsuite \
     metasploit-framework \
     nmap \
@@ -33,10 +36,10 @@ rm go1.13.4.linux-amd64.tar.gz
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile
-source ~/.bash_profile
+echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
+echo 'export GOPATH=$HOME/go'	>> $HOME/.bash_profile
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.bash_profile
+source $HOME/.bash_profile
 
 go get -u github.com/tomnomnom/httprobe
 
