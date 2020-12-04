@@ -43,8 +43,10 @@ go get -u github.com/tomnomnom/httprobe
 
 sudo apt install -y python3-pip
 git clone https://github.com/SusmithKrishnan/torghost.git $HOME/torghost
-chmod +x $HOME/torghost/build.sh
-sh $HOME/torghost/build.sh
+cd $HOME/torghost
+chmod +x build.sh
+sh build.sh
+cd
 rm -rf $HOME/torghost
 
 sudo systemctl enable ssh
