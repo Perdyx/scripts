@@ -34,10 +34,10 @@ rm go1.13.4.linux-amd64.tar.gz
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
-echo 'export GOPATH=$HOME/go'	>> $HOME/.bash_profile
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.bash_profile
-source $HOME/.bash_profile
+echo 'export GOROOT=/usr/local/go' >> $HOME/.profile
+echo 'export GOPATH=$HOME/go'	>> $HOME/.profile
+echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.profile
+source $HOME/.profile
 
 go get -u github.com/tomnomnom/httprobe
 
