@@ -16,7 +16,7 @@ echo " | |__ | | | |_  __"
 echo " | '_ \| | | \ \/ /"
 echo " | |_) | |_| |>  < "
 echo " |_.__/ \___//_/\_\\"
-echo -e "\nv1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n\n"
+echo -e "\nv1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n"
 
 sudo apt update -y
 
