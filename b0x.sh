@@ -3,7 +3,7 @@
 # Author: per
 # Description: Set up a functional Kali machine for webapp pentesting
 
-if [ $EUID -ne 0 ]; then
+if [ $EUID -eq 0 ]; then
     echo "Running this script as root will have unintended consequences. Aborting..."
     exit 1
 fi
