@@ -8,7 +8,7 @@ if [ $EUID -eq 0 ]; then
     exit 1
 fi
 
-sudo echo "62 30 78"
+sudo echo -e "\n62 30 78"
 
 echo "  _      ___       "
 echo " | |    / _ \      "
