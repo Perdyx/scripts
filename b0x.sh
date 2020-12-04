@@ -4,7 +4,7 @@
 # Description: Set up a functional Kali machine for webapp pentesting
 
 if [ $EUID -ne 0 ]; then
-    echo "Root required"
+    echo "Running this script as root will have unintended consequences. Aborting..."
     exit 1
 fi
 
@@ -18,9 +18,9 @@ echo " | |_) | |_| |>  < "
 echo " |_.__/ \___//_/\_\\"
 echo -e "\nv1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n\n"
 
-apt update -y
+sudo apt update -y
 
-apt install -y amass \
+sudo apt install -y amass \
     burpsuite \
     metasploit-framework \
     nmap \
@@ -29,14 +29,14 @@ apt install -y amass \
 
 wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 tar -xvf go1.13.4.linux-amd64.tar.gz
-mv go /usr/local
+sudo mv go /usr/local
 rm go1.13.4.linux-amd64.tar.gz
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-echo 'export GOROOT=/usr/local/go' >> $HOME/.profile
-echo 'export GOPATH=$HOME/go'	>> $HOME/.profile
-echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> $HOME/.profile
+echo "export GOROOT=/usr/local/go" >> $HOME/.profile
+echo "export GOPATH=$HOME/go" >> $HOME/.profile
+echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> $HOME/.profile
 source $HOME/.profile
 
 go get -u github.com/tomnomnom/httprobe
