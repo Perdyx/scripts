@@ -47,9 +47,9 @@ chmod +x $HOME/torghost/build.sh
 sh $HOME/build.sh
 rm -rf $HOME/torghost
 
-systemctl enable ssh
-systemctl start ssh
-systemctl status ssh
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo systemctl status ssh
 
 chsh -s $(which bash)
 
