@@ -3,11 +3,9 @@
 # Author: per
 # Description: Set up a functional Kali machine for webapp pentesting
 
-echo -e "DISCLAIMER: Due to the nature of some of applications installed with this script, running the entire script as root may have unintended consequences. Certain parts of this script do require root, however, so you will be prompted for your password.\n"
-
-if [ $EUID -eq 0 ]; then
-    echo "Root detected. Exiting..."
-    # exit 1
+if [ $EUID -ne 0 ]; then
+    echo "Root required"
+    exit 1
 fi
 
 sudo echo "62 30 78"
@@ -20,9 +18,9 @@ echo " | |_) | |_| |>  < "
 echo " |_.__/ \___//_/\_\\"
 echo -e " v1.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n\n"
 
-sudo apt update -y
+apt update -y
 
-sudo apt install -y amass \
+apt install -y amass \
     burpsuite \
     metasploit-framework \
     nmap \
