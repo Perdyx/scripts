@@ -41,8 +41,8 @@ source $HOME/.profile
 
 go get -u github.com/tomnomnom/httprobe
 
-apt install -y python3-pip
-git clone https://github.com/SusmithKrishnan/torghost.git $HOME
+sudo apt install -y python3-pip
+git clone https://github.com/SusmithKrishnan/torghost.git $HOME/torghost
 chmod +x $HOME/torghost/build.sh
 sh $HOME/build.sh
 rm -rf $HOME/torghost
@@ -50,6 +50,8 @@ rm -rf $HOME/torghost
 sudo systemctl enable ssh
 sudo systemctl start ssh
 sudo systemctl status ssh
+
+hostname -I
 
 chsh -s $(which bash)
 
