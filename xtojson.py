@@ -40,7 +40,7 @@ for line in inFile.splitlines():
             colors[color] = line.replace('*.' + color + ':#', '')
 
 print('{')
-print('\t"name": "NAME",')
+print('\t"name": "theme",')
 print('\t"background": "#' + colors['background'] + '",')
 print('\t"foreground": "#' + colors['foreground'] + '",')
 print('\t"black": "#' + colors['color0'] + '",')
