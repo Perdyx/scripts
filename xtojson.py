@@ -34,15 +34,10 @@ colors = {
 }
 
 for line in inFile.splitlines():
-    if line.startswith('*background: '):
-        background = line.replace('*background: #', '')
-
-    if line.startswith('*foreground: '):
-        foreground = line.replace('*foreground: #', '')
-
     for color in colors:
-        if line.startswith('*' + color + ': '):
-            colors[color] = line.replace('*' + color + ': #', '')
+        line = line.replace(' ', '')
+        if line.startswith('*.' + color + ':'):
+            colors[color] = line.replace('*.' + color + ':#', '')
 
 print('{')
 print('\t"name": "NAME",')
@@ -63,5 +58,5 @@ print('\t"brightYellow": "#' + colors['color11'] + '",')
 print('\t"brightBlue": "#' + colors['color12'] + '",')
 print('\t"brightBurple": "#' + colors['color13'] + '",')
 print('\t"brightCyan": "#' + colors['color14'] + '",')
-print('\t"brightWhite": "#' + colors['color15'] + '",')
+print('\t"brightWhite": "#' + colors['color15'])
 print('}')
