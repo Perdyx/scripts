@@ -17,6 +17,7 @@ echo " |_.__/ \___//_/\_\\"
 echo -e "\nv2.0.0 - https://github.com/Perdyx/scripts/blob/master/b0x.sh\n"
 
 cd
+touch $HOME/.hushlogin
 
 apt update -y
 apt full-upgrade -y
